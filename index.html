@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sufaidullah | Web Developer & Designer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        :root {
+            --primary: #0066FF;
+            --dark: #0f172a;
+            --light: #f8fafc;
+        }
+
+        body {
+            background-color: #fff;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* --- NAVBAR --- */
+        .nav-glass {
+            position: fixed;
+            top: 0; width: 100%; z-index: 1000;
+            padding: 20px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            backdrop-filter: blur(10px);
+            transition: 0.4s;
+        }
+
+        .nav-glass.scrolled {
+            background: rgba(255,255,255,0.9);
+            padding: 15px 5%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 800; text-decoration: none; color: var(--dark); }
+        .logo span { color: var(--primary); }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { text-decoration: none; color: #64748b; font-weight: 700; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 100vh;
+            display: flex; align-items: center;
+            padding: 100px 5%;
+            position: relative;
+        }
+
+        .hero-grid {
+            max-width: 1300px; margin: 0 auto;
+            display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-block; padding: 8px 16px;
+            background: rgba(0,102,255,0.1); color: var(--primary);
+            border-radius: 100px; font-weight: 800; font-size: 0.8rem;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 20px; }
+        .hero h1 span { color: var(--primary); }
+        
+        .hero-desc { font-size: 1.2rem; color: #64748b; margin-bottom: 40px; max-width: 500px; }
+
+        .btn-group { display: flex; gap: 20px; }
+        .btn-main {
+            padding: 18px 35px; background: var(--dark); color: white;
+            text-decoration: none; border-radius: 15px; font-weight: 800; transition: 0.4s;
+        }
+        .btn-main:hover { background: var(--primary); transform: translateY(-5px); }
+
+        .visual-side { position: relative; }
+        .profile-img {
+            width: 100%; max-width: 450px; border-radius: 40px;
+            transform: rotate(-3deg); box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+        }
+
+        .float-tag {
+            position: absolute; background: white; padding: 10px 20px;
+            border-radius: 12px; font-weight: 800; box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            color: var(--primary); font-family: monospace;
+        }
+        .t1 { top: 10%; right: 0; }
+        .t2 { bottom: 10%; left: -20px; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-desc { margin: 30px auto; }
+            .btn-group { justify-content: center; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-glass">
+        <a href="#" class="logo">SUFAIDULLAH<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-grid">
+            <div class="hero-text">
+                <div class="badge">PRO DEVELOPER & DESIGNER</div>
+                <h1>Creating High <br><span>Performance</span> Web</h1>
+                <p class="hero-desc" id="hero-typing"></p>
+                <div class="btn-group">
+                    <a href="#work" class="btn-main">View Projects</a>
+                </div>
+            </div>
+
+            <div class="visual-side">
+                <img src="A.jpg" alt="Sufaidullah" class="profile-img">
+                <div class="float-tag t1">&lt;Dev&gt;</div>
+                <div class="float-tag t2">{Design}</div>
+            </div>
+        </div>
+    </section>
+<section class="about-sufaid" id="about">
+    <div class="container-about">
+        
+        <div class="about-grid">
+            <div class="about-image-area">
+                <div class="experience-badge">
+                    <span class="exp-num">3+</span>
+                    <span class="exp-text">Years of <br>Experience</span>
+                </div>
+                <div class="img-frame">
+                    <img src="A.jpg" alt="Sufaidullah" class="about-img">
+                </div>
+                <div class="circle-decoration"></div>
+            </div>
+
+            <div class="about-text-area">
+                <span class="mini-title">Discovery</span>
+                <h2 class="about-title">About <span>Me</span></h2>
+                <p class="about-p">
+                    Hi! I'm <strong>Sufaidullah</strong>, a passionate Web Developer and Designer. Mera maqsad sirf code likhna nahi, balki aise digital solutions banana hai jo fast hon, secure hon, aur dekhne mein bohot khoobsurat hon.
+                </p>
+                <p class="about-p">
+                    Maine kai modern projects par kaam kiya hai, frontend se lekar backend optimization tak. Jab main coding nahi kar raha hota, to main naye UI trends explore karta hoon.
+                </p>
+
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <h3>50+</h3>
+                        <p>Projects Done</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>20+</h3>
+                        <p>Happy Clients</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>100%</h3>
+                        <p>Dedication</p>
+                    </div>
+                </div>
+
+                <div class="about-btns">
+                    <a href="#contact" class="btn-hire">Let's Talk</a>
+                    <a href="cv.pdf" class="btn-cv" download>Download CV 📥</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section class="skills-section" id="skills">
+    <div class="skills-wrapper">
+        
+        <div class="skills-intro-box">
+            <span class="tech-label">My Tech Stack</span>
+            <h2 class="skills-main-title">Programming & <span>Tools</span></h2>
+            <p class="skills-text">Mera focus clean code aur scalable solutions par hota hai. Main modern frameworks aur backend technologies ka mahir hoon.</p>
+        </div>
+
+        <div class="skills-display-grid">
+            
+            <div class="skill-card">
+                <div class="icon-circle">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                </div>
+                <div class="skill-detail">
+                    <h3>HTML5</h3>
+                    <p>Semantic markup aur accessibility ke saath solid web structure banana.</p>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="icon-circle">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                </div>
+                <div class="skill-detail">
+                    <h3>CSS3 & Tailwind</h3>
+                    <p>Responsive design aur complex layouts jo har device par perfect dikhein.</p>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="icon-circle">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">
+                </div>
+                <div class="skill-detail">
+                    <h3>JavaScript (ES6+)</h3>
+                    <p>Dynamic functionality aur client-side programming mein expertise.</p>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="icon-circle">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJS">
+                </div>
+                <div class="skill-detail">
+                    <h3>Backend Development</h3>
+                    <p>Node.js aur Firebase ka istemal karte hue secure APIs aur Real-time data handling.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Styling for Skills Section */
+    .skills-section {
+        padding: 100px 5%;
+        background-color: #ffffff;
+    }
+
+    .skills-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .skills-intro-box {
+        text-align: center;
+        margin-bottom: 70px;
+    }
+
+    .tech-label {
+        color: #0066FF;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+    }
+
+    .skills-main-title {
+        font-size: 3rem;
+        font-weight: 800;
+        margin: 15px 0;
+        color: #0f172a;
+    }
+
+    .skills-main-title span { color: #0066FF; }
+
+    .skills-text {
+        color: #64748b;
+        max-width: 600px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    /* Grid Layout */
+    .skills-display-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 30px;
+    }
+
+    .skill-card {
+        background: #fff;
+        padding: 40px 30px;
+        border-radius: 25px;
+        border: 1px solid #f1f5f9;
+        text-align: center;
+        transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .icon-circle {
+        width: 80px;
+        height: 80px;
+        background: #f8fafc;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px auto;
+        transition: 0.4s;
+    }
+
+    .icon-circle img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .skill-detail h3 {
+        font-size: 1.3rem;
+        font-weight: 800;
+        margin-bottom: 12px;
+        color: #1e293b;
+    }
+
+    .skill-detail p {
+        color: #64748b;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* Hover State */
+    .skill-card:hover {
+        transform: translateY(-10px);
+        border-color: #0066FF;
+        box-shadow: 0 20px 40px rgba(0, 102, 255, 0.05);
+    }
+
+    .skill-card:hover .icon-circle {
+        background: rgba(0, 102, 255, 0.1);
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    @media (max-width: 768px) {
+        .skills-main-title { font-size: 2.3rem; }
+    }
+</style>
+
+<style>
+    .about-sufaid {
+        padding: 120px 5%;
+        background: #ffffff;
+        overflow: hidden;
+    }
+
+    .container-about { max-width: 1200px; margin: 0 auto; }
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    /* Left Side Styling */
+    .about-image-area { position: relative; }
+
+    .img-frame {
+        position: relative;
+        z-index: 2;
+        border-radius: 40px;
+        overflow: hidden;
+        box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+    }
+
+    .about-img {
+        width: 100%;
+        display: block;
+        transition: 0.5s;
+    }
+
+    .about-image-area:hover .about-img { transform: scale(1.05); }
+
+    .experience-badge {
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        background: var(--primary);
+        color: white;
+        padding: 25px;
+        border-radius: 25px;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 15px 30px rgba(0, 102, 255, 0.3);
+    }
+
+    .exp-num { font-size: 2rem; font-weight: 800; line-height: 1; }
+    .exp-text { font-size: 0.7rem; font-weight: 700; text-align: center; text-transform: uppercase; }
+
+    .circle-decoration {
+        position: absolute;
+        bottom: -30px;
+        right: -30px;
+        width: 150px;
+        height: 150px;
+        background: rgba(0, 102, 255, 0.05);
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    /* Right Side Styling */
+    .mini-title { color: var(--primary); font-weight: 800; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; }
+    
+    .about-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin: 15px 0 25px 0;
+    }
+
+    .about-title span { color: var(--primary); }
+
+    .about-p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #64748b;
+        margin-bottom: 20px;
+    }
+
+    /* Stats Grid */
+    .stats-row {
+        display: flex;
+        gap: 30px;
+        margin: 40px 0;
+    }
+
+    .stat-box h3 { font-size: 2rem; font-weight: 800; color: var(--dark); }
+    .stat-box p { color: #94a3b8; font-weight: 600; font-size: 0.9rem; }
+
+    /* Buttons */
+    .about-btns { display: flex; gap: 20px; }
+
+    .btn-hire {
+        padding: 15px 35px;
+        background: var(--primary);
+        color: white;
+        text-decoration: none;
+        border-radius: 12px;
+        font-weight: 800;
+        transition: 0.3s;
+    }
+
+    .btn-cv {
+        padding: 15px 35px;
+        border: 2px solid #e2e8f0;
+        color: var(--dark);
+        text-decoration: none;
+        border-radius: 12px;
+        font-weight: 800;
+        transition: 0.3s;
+    }
+
+    .btn-hire:hover { box-shadow: 0 10px 20px rgba(0, 102, 255, 0.2); transform: translateY(-3px); }
+    .btn-cv:hover { border-color: var(--primary); color: var(--primary); }
+
+    /* Mobile Responsive */
+    @media (max-width: 900px) {
+        .about-grid { grid-template-columns: 1fr; gap: 50px; text-align: center; }
+        .about-image-area { max-width: 400px; margin: 0 auto; }
+        .stats-row { justify-content: center; }
+        .about-btns { justify-content: center; }
+        .about-title { font-size: 2.5rem; }
+    }
+</style>
+<section class="dev-projects" id="work">
+    <div class="projects-container">
+        
+        <div class="projects-header">
+            <span class="top-tag">My Work</span>
+            <h2 class="title">Featured <span>Projects</span></h2>
+            <p class="subtitle">Maine modern web technologies ka istemal karte hue ye projects build kiye hain.</p>
+        </div>
+
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-img-box">
+                    <img src="C.jpg" alt="E-commerce Project">
+                    <div class="project-overlay">
+                        <div class="links">
+                            <a href="#" class="p-icon" title="View Code">📂</a>
+                            <a href="#" class="p-icon" title="Live Preview">🌐</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="category">Full Stack</span>
+                    <h3>E-Commerce Platform</h3>
+                    <p>Modern shopping experience with secure payments and real-time inventory management.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img-box">
+                    <img src="D.jpg" alt="Dashboard Project">
+                    <div class="project-overlay">
+                        <div class="links">
+                            <a href="#" class="p-icon">📂</a>
+                            <a href="#" class="p-icon">🌐</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="category">UI/UX & React</span>
+                    <h3>SaaS Analytics Dashboard</h3>
+                    <p>Complex data visualization charts aur user management system ke sath custom dashboard.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img-box">
+                    <img src="E.jpg" alt="Social App Project">
+                    <div class="project-overlay">
+                        <div class="links">
+                            <a href="#" class="p-icon">📂</a>
+                            <a href="#" class="p-icon">🌐</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="category">Backend / Node</span>
+                    <h3>Real-time Chat App</h3>
+                    <p>Firebase/Socket.io integration ke sath instant messaging aur user profile features.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img-box">
+                    <img src="F.jpg" alt="Portfolio Project">
+                    <div class="project-overlay">
+                        <div class="links">
+                            <a href="#" class="p-icon">📂</a>
+                            <a href="#" class="p-icon">🌐</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="category">Frontend Design</span>
+                    <h3>Premium Brand Website</h3>
+                    <p>High-end animations aur GSAP transitions ke sath interactive branding site.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img-box">
+                    <img src="G.jpg" alt="CMS Project">
+                    <div class="project-overlay">
+                        <div class="links">
+                            <a href="#" class="p-icon">📂</a>
+                            <a href="#" class="p-icon">🌐</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="category">WordPress/Custom CMS</span>
+                    <h3>Digital Magazine</h3>
+                    <p>Dynamic content management system jo SEO aur performance ke liye optimized hai.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    .dev-projects { padding: 100px 5%; background: #ffffff; }
+    .projects-container { max-width: 1300px; margin: 0 auto; }
+    
+    .projects-header { text-align: center; margin-bottom: 60px; }
+    .top-tag { color: #0066FF; font-weight: 800; letter-spacing: 2px; font-size: 0.8rem; text-transform: uppercase; }
+    .title { font-size: 3rem; font-weight: 800; margin: 10px 0; }
+    .title span { color: #0066FF; }
+    .subtitle { color: #64748b; font-size: 1.1rem; }
+
+    /* Grid Layout */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+    }
+
+    .project-card {
+        background: #fff;
+        border-radius: 30px;
+        overflow: hidden;
+        border: 1px solid #f1f5f9;
+        transition: 0.4s;
+    }
+
+    /* Image Box & Hover Effect */
+    .project-img-box {
+        position: relative;
+        height: 250px;
+        overflow: hidden;
+    }
+
+    .project-img-box img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        transition: 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+    .project-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 102, 255, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: 0.4s;
+    }
+
+    .links { display: flex; gap: 15px; }
+    .p-icon {
+        width: 50px; height: 50px;
+        background: white;
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        text-decoration: none; font-size: 1.2rem;
+        transition: 0.3s;
+    }
+    .p-icon:hover { transform: scale(1.1); background: #000; color: #fff; }
+
+    .project-card:hover .project-img-box img { transform: scale(1.1); }
+    .project-card:hover .project-overlay { opacity: 1; }
+
+    /* Project Info */
+    .project-info { padding: 30px; }
+    .category { color: #0066FF; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; }
+    .project-info h3 { font-size: 1.4rem; font-weight: 800; margin: 10px 0; color: #0f172a; }
+    .project-info p { color: #64748b; font-size: 0.95rem; line-height: 1.6; }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px rgba(0, 102, 255, 0.1);
+    }
+
+    @media (max-width: 768px) {
+        .projects-grid { grid-template-columns: 1fr; }
+    }
+</style>
+<section class="reviews-section" id="reviews">
+    <div class="reviews-header">
+        <span class="code-tag">// What clients say</span>
+        <h2 class="title">Trusted by <span>Global Clients</span></h2>
+    </div>
+
+    <div class="slider-wrapper">
+        <div class="review-track track-1" id="track1">
+            </div>
+    </div>
+
+    <div class="slider-wrapper" style="margin-top: 20px;">
+        <div class="review-track track-2" id="track2">
+            </div>
+    </div>
+</section>
+
+<style>
+    .reviews-section { padding: 100px 0; background: #fff; overflow: hidden; }
+    .reviews-header { text-align: center; margin-bottom: 60px; padding: 0 5%; }
+    .code-tag { font-family: monospace; color: #0066FF; font-weight: 700; }
+    .title { font-size: 3rem; font-weight: 800; margin-top: 10px; }
+    .title span { color: #0066FF; }
+
+    /* Slider Core */
+    .slider-wrapper { display: flex; width: 100%; overflow: hidden; }
+    
+    .review-track {
+        display: flex;
+        gap: 20px;
+        white-space: nowrap;
+        padding: 10px;
+    }
+
+    /* Infinite Animation */
+    .track-1 { animation: scrollLeft 60s linear infinite; }
+    .track-2 { animation: scrollRight 60s linear infinite; }
+
+    @keyframes scrollLeft {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    @keyframes scrollRight {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0); }
+    }
+
+    /* Review Card Style */
+    .r-card {
+        flex: 0 0 350px;
+        background: #fff;
+        padding: 30px;
+        border-radius: 20px;
+        border: 1px solid #f1f5f9;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        transition: 0.3s;
+    }
+
+    .r-card:hover { 
+        border-color: #0066FF; 
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 102, 255, 0.08);
+    }
+
+    .stars { color: #FFB800; margin-bottom: 15px; font-size: 0.8rem; }
+    .feedback { 
+        font-size: 0.95rem; color: #64748b; 
+        white-space: normal; line-height: 1.5;
+        margin-bottom: 20px;
+    }
+    
+    .user-info { display: flex; align-items: center; gap: 12px; }
+    .user-info img { width: 40px; height: 40px; border-radius: 50%; background: #eee; }
+    .user-info h4 { font-size: 0.9rem; font-weight: 800; color: #0f172a; margin: 0; }
+    .user-info span { font-size: 0.75rem; color: #94a3b8; }
+
+    /* Pause on hover */
+    .slider-wrapper:hover .review-track { animation-play-state: paused; }
+</style>
+
+<script>
+    const reviewsData = [
+        { name: "Alex Johnson", country: "USA 🇺🇸", text: "Sufaidullah is a React wizard! Highly recommended." },
+        { name: "Satoshi Nakamoto", country: "Japan 🇯🇵", text: "Cleanest code I've seen in a long time. 10/10." },
+        { name: "Maria Garcia", country: "Spain 🇪🇸", text: "Fixed my database issues in hours. Brilliant!" },
+        { name: "Liam Smith", country: "UK 🇬🇧", text: "The UI he designed is so smooth and modern." },
+        { name: "Ahmed Khan", country: "UAE 🇦🇪", text: "Best developer for custom web solutions." },
+        { name: "Emma Wilson", country: "Canada 🇨🇦", text: "Very professional and great communication." },
+        // ... Yahan 30 names aur texts add ho saktay hain
+    ];
+
+    function createCard(data) {
+        return `
+            <div class="r-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="feedback">"${data.text}"</p>
+                <div class="user-info">
+                    <img src="https://ui-avatars.com/api/?name=${data.name}&background=0066FF&color=fff" alt="User">
+                    <div>
+                        <h4>${data.name}</h4>
+                        <span>${data.country}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    const t1 = document.getElementById('track1');
+    const t2 = document.getElementById('track2');
+
+    // Generate 30 reviews (looping through data or repeating it)
+    let content = "";
+    for(let i=0; i<15; i++) {
+        let item = reviewsData[i % reviewsData.length];
+        content += createCard(item);
+    }
+    t1.innerHTML = content + content; // Double for infinite loop
+    
+    let content2 = "";
+    for(let i=5; i<20; i++) {
+        let item = reviewsData[i % reviewsData.length];
+        content2 += createCard(item);
+    }
+    t2.innerHTML = content2 + content2;
+</script>
+<section class="contact-section" id="contact">
+    <div class="contact-container">
+        
+        <div class="contact-flex">
+            <div class="contact-info">
+                <span class="sub-heading">// Let's Connect</span>
+                <h2 class="main-heading">Ready to start your <span>next project?</span></h2>
+                <p class="description">
+                    Aap mujhe niche diye gaye form ke zariye message bhej sakte hain, ya phir direct mere social media par rabta kar sakte hain. Main jald az jald jawab dene ki koshish karunga.
+                </p>
+
+                <div class="contact-details">
+                    <div class="detail-card">
+                        <span class="icon">✉️</span>
+                        <div>
+                            <p class="label">Official Email</p>
+                            <a href="mailto:Sufaidullah63@gmail.com" class="val">Sufaidullah63@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links-grid">
+                    <a href="https://wa.me/923319019602" class="s-btn whatsapp">WhatsApp</a>
+                    <a href="https://linkedin.com/in/Sufaid ullah" class="s-btn linkedin">LinkedIn</a>
+                    <a href="https://t.me/923319019602" class="s-btn telegram">Telegram</a>
+                    <a href="https://tiktok.com/@Sufaid.ullah49" class="s-btn tiktok">TikTok</a>
+                </div>
+            </div>
+
+            <div class="contact-form-box">
+                <form action="https://Sufaidullah63@gmail.com" method="POST" class="form-element">
+                    
+                    <div class="form-group">
+                        <input type="text" name="full_name" placeholder="Aapka Naam" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" name="_replyto" placeholder="Aapki Email Address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="subject" placeholder="Project ka Unwan (Subject)" required>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea name="message" rows="5" placeholder="Aapka Message..." required></textarea>
+                    </div>
+
+                    <input type="hidden" name="_subject" value="New Inquiry from Portfolio!">
+
+                    <button type="submit" class="submit-button">
+                        Message Bhein 🚀
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    .contact-section {
+        padding: 100px 5%;
+        background-color: #ffffff;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .contact-container { max-width: 1200px; margin: 0 auto; }
+
+    .contact-flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 60px;
+        align-items: flex-start;
+    }
+
+    .contact-info, .contact-form-box { flex: 1; min-width: 320px; }
+
+    /* Left Side Styling */
+    .sub-heading { color: #0066FF; font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; }
+    .main-heading { font-size: 3.2rem; font-weight: 800; margin: 20px 0; line-height: 1.1; color: #0f172a; }
+    .main-heading span { color: #0066FF; }
+    .description { color: #64748b; font-size: 1.1rem; line-height: 1.6; margin-bottom: 40px; }
+
+    .detail-card {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background: #f8fafc;
+        padding: 20px;
+        border-radius: 20px;
+        margin-bottom: 30px;
+    }
+
+    .detail-card .icon { font-size: 1.5rem; }
+    .detail-card .label { font-size: 0.8rem; font-weight: 800; color: #94a3b8; margin: 0; }
+    .detail-card .val { font-size: 1.1rem; font-weight: 800; color: #0f172a; text-decoration: none; }
+
+    /* Social Buttons Styling */
+    .social-links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .s-btn {
+        padding: 15px; text-align: center; border-radius: 12px; text-decoration: none;
+        font-weight: 800; color: #fff; font-size: 0.9rem; transition: 0.3s;
+    }
+    .whatsapp { background: #25D366; }
+    .linkedin { background: #0077B5; }
+    .telegram { background: #0088CC; }
+    .tiktok { background: #000000; }
+    .s-btn:hover { transform: translateY(-3px); opacity: 0.9; }
+
+    /* Form Styling */
+    .contact-form-box {
+        background: #ffffff;
+        padding: 40px;
+        border-radius: 35px;
+        box-shadow: 0 40px 100px rgba(0,0,0,0.05);
+        border: 1px solid #f1f5f9;
+    }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group input, .form-group textarea {
+        width: 100%;
+        padding: 18px;
+        border-radius: 15px;
+        border: 2px solid #f1f5f9;
+        background: #f8fafc;
+        font-size: 1rem;
+        outline: none;
+        transition: 0.3s;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+        border-color: #0066FF;
+        background: #fff;
+        box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.1);
+    }
+
+    .submit-button {
+        width: 100%;
+        padding: 20px;
+        background: #0066FF;
+        color: #fff;
+        border: none;
+        border-radius: 15px;
+        font-size: 1.1rem;
+        font-weight: 800;
+        cursor: pointer;
+        transition: 0.4s;
+    }
+
+    .submit-button:hover { background: #0f172a; transform: translateY(-5px); }
+
+    @media (max-width: 768px) {
+        .main-heading { font-size: 2.5rem; }
+        .social-links-grid { grid-template-columns: 1fr; }
+    }
+</style>
+<section class="process-section">
+    <div class="process-container">
+        <div class="process-header">
+            <span class="process-tag">// My Workflow</span>
+            <h2 class="process-title">How I <span>Bring Results</span></h2>
+        </div>
+
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-num">01</div>
+                <h3>Strategy & Research</h3>
+                <p>Aapke idea ko samajhna aur market ke hisab se behtareen plan banana.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-num">02</div>
+                <h3>Design & UI/UX</h3>
+                <p>Modern aur clean interface design karna jo users ko pasand aaye.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-num">03</div>
+                <h3>Development</h3>
+                <p>Clean code aur modern technologies ke sath website ko live karna.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-num">04</div>
+                <h3>Deployment</h3>
+                <p>Final testing ke baad aapka project world-wide launch karna.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .process-section { padding: 100px 5%; background: #fdfdfd; }
+    .process-container { max-width: 1200px; margin: 0 auto; }
+    .process-header { text-align: center; margin-bottom: 60px; }
+    .process-tag { color: #0066FF; font-family: monospace; font-weight: 800; }
+    .process-title { font-size: 3rem; font-weight: 800; margin-top: 10px; }
+    .process-title span { color: #0066FF; }
+
+    .process-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+
+    .step {
+        background: #fff;
+        padding: 40px;
+        border-radius: 25px;
+        border: 1px solid #f1f5f9;
+        transition: 0.4s;
+        position: relative;
+    }
+
+    .step-num {
+        font-size: 3rem;
+        font-weight: 900;
+        color: rgba(0, 102, 255, 0.1);
+        position: absolute;
+        top: 20px;
+        right: 30px;
+    }
+
+    .step h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; color: #0f172a; }
+    .step p { color: #64748b; line-height: 1.6; }
+
+    .step:hover {
+        transform: translateY(-10px);
+        border-color: #0066FF;
+        box-shadow: 0 20px 40px rgba(0, 102, 255, 0.05);
+    }
+</style>
+<footer class="sufaid-footer">
+    <div class="footer-overlay-glow"></div>
+    <div class="footer-container">
+        
+        <div class="footer-main-grid">
+            <div class="footer-col branding">
+                <h2 class="f-logo">SUFAIDULLAH<span>.</span></h2>
+                <p class="f-tagline">Web Developer & UI Designer. Creating high-performance digital solutions with precision and passion.</p>
+                
+                 <a href="https://wa.me/923319019602"
+   target="_blank"
+   class="s-icon wa"
+   title="WhatsApp">
+   WA
+   
+</a>
+                    <a href="https://linkedin.com/in/Sufaidullah49" class="s-icon li" title="LinkedIn">IN</a>
+                    <a href="https://t.me/+923319019602" class="s-icon tg" title="Telegram">TG</a>
+                    <a href="https://tiktok.com/@Sufaid.ullah49" class="s-icon tk" title="TikTok">TK</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="f-title">Navigation</h4>
+                <ul class="f-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#work">Portfolio</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="f-title">Expertise</h4>
+                <ul class="f-links">
+                    <li><a href="#services">Web Development</a></li>
+                    <li><a href="#services">UI/UX Design</a></li>
+                    <li><a href="#services">Backend Systems</a></li>
+                    <li><a href="#services">SEO Optimization</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="f-title">Let's Connect</h4>
+                <div class="f-contact-info">
+                    <p><span>📧</span> Sufaidullah63@gmail.com</p>
+                    <p><span>📍</span> Available Worldwide</p>
+                </div>
+                <a href="#contact" class="f-cta-btn">Start a Project</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="f-divider"></div>
+            <div class="f-bottom-flex">
+                <p>© 2026 Sufaidullah Studio. All Rights Reserved.</p>
+                <div class="f-legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+
+    .sufaid-footer {
+        background: #0f172a; /* Deep Navy Dark */
+        color: #ffffff;
+        padding: 100px 5% 40px 5%;
+        position: relative;
+        overflow: hidden;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .footer-overlay-glow {
+        position: absolute;
+        top: -150px;
+        right: -150px;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(0, 102, 255, 0.15) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    .footer-container { max-width: 1300px; margin: 0 auto; position: relative; z-index: 5; }
+
+    .footer-main-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+        gap: 50px;
+        margin-bottom: 60px;
+    }
+
+    /* Branding */
+    .f-logo { font-size: 2.2rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 25px; }
+    .f-logo span { color: #0066FF; }
+    .f-tagline { color: #94a3b8; line-height: 1.7; max-width: 320px; margin-bottom: 30px; font-size: 1rem; }
+
+    /* Social Icons */
+    .f-social-icons { display: flex; gap: 12px; }
+    .s-icon {
+        width: 45px; height: 45px;
+        background: rgba(255,255,255,0.05);
+        display: flex; align-items: center; justify-content: center;
+        border-radius: 12px; text-decoration: none; color: #fff;
+        font-weight: 800; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.1);
+        transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .s-icon:hover { 
+        background: #0066FF; 
+        transform: translateY(-5px) rotate(8deg); 
+        border-color: #0066FF;
+        box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
+    }
+
+    /* Links Column */
+    .f-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 30px; position: relative; }
+    .f-title::after { content: ''; position: absolute; left: 0; bottom: -10px; width: 30px; height: 2px; background: #0066FF; }
+
+    .f-links { list-style: none; padding: 0; }
+    .f-links li { margin-bottom: 15px; }
+    .f-links a { 
+        text-decoration: none; color: #94a3b8; font-weight: 600; 
+        transition: 0.3s; display: inline-block;
+    }
+    .f-links a:hover { color: #ffffff; transform: translateX(8px); }
+
+    /* Contact & CTA */
+    .f-contact-info p { color: #94a3b8; margin-bottom: 15px; font-weight: 600; display: flex; gap: 10px; }
+    .f-contact-info span { color: #0066FF; }
+    
+    .f-cta-btn {
+        display: inline-block; margin-top: 20px; padding: 15px 30px;
+        background: #ffffff; color: #0f172a; text-decoration: none;
+        border-radius: 12px; font-weight: 800; transition: 0.4s;
+    }
+    .f-cta-btn:hover { background: #0066FF; color: #fff; transform: scale(1.05); }
+
+    /* Bottom Section */
+    .f-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.05); margin-bottom: 40px; }
+    .f-bottom-flex { display: flex; justify-content: space-between; align-items: center; color: #64748b; font-size: 0.9rem; font-weight: 600; }
+    .f-legal-links { display: flex; gap: 25px; }
+    .f-legal-links a { text-decoration: none; color: #64748b; transition: 0.3s; }
+    .f-legal-links a:hover { color: #fff; }
+
+    /* Mobile View */
+    @media (max-width: 900px) {
+        .footer-main-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+    @media (max-width: 600px) {
+        .footer-main-grid { grid-template-columns: 1fr; text-align: center; }
+        .f-tagline { margin: 0 auto 30px auto; }
+        .f-social-icons { justify-content: center; }
+        .f-title::after { left: 50%; transform: translateX(-50%); }
+        .f-bottom-flex { flex-direction: column; gap: 20px; }
+    }
+</style>
+
+<script>
+    // GSAP Entrance Animation
+    gsap.from(".about-image-area", {
+        scrollTrigger: ".about-sufaid",
+        x: -100,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out"
+    });
+
+    gsap.from(".about-text-area", {
+        scrollTrigger: ".about-sufaid",
+        x: 100,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out"
+    });
+</script>
+
+    <script>
+        gsap.registerPlugin(TextPlugin, ScrollTrigger);
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                document.querySelector('.nav-glass').classList.add('scrolled');
+            } else {
+                document.querySelector('.nav-glass').classList.remove('scrolled');
+            }
+        });
+
+        // Typing Effect for Sufaidullah
+        gsap.to("#hero-typing", {
+            duration: 3,
+            text: "Hi, I am Sufaidullah. I build modern, scalable web applications with clean code and creative design. Let's build the future together.",
+            ease: "none",
+        });
+
+        // Image Floating Animation
+        gsap.to(".profile-img", {
+            y: 20,
+            duration: 2,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+
+        gsap.to(".float-tag", {
+            y: -10,
+            duration: 1.5,
+            repeat: -1,
+            yoyo: true,
+            stagger: 0.5
+        });
+    </script>
+</body>
+</html>
